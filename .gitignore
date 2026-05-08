@@ -1,0 +1,12 @@
+node_modules
+dist
+build
+.env
+.env.local
+coverage
+.turbo
+.next
+.DS_Store
+pnpm-lock.yaml
+logs
+*.log
