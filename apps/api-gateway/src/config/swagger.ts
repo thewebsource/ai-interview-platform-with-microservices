@@ -2,7 +2,7 @@ import { Application, Request, Response } from "express";
 import swaggerJSDoc, {Options} from "swagger-jsdoc";
 import swaggerUi from "swagger-ui-express";
 import path from "path";
-import env from "./env.js";
+import env from "./env";
 
 
 export class SwaggerConfig {
@@ -12,7 +12,7 @@ export class SwaggerConfig {
         this.spec = swaggerJSDoc(this.buildOptions())
     }
 
-    private buildOptions(): Options{
+    private buildOptions(): Options {
         return {
             definition: {
                 openapi: "3.0.3",

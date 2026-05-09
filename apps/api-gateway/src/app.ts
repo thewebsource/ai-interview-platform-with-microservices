@@ -1,8 +1,8 @@
 import express, { type Application } from "express";
 import cookieParser from "cookie-parser";
 import cors, { CorsOptions } from "cors";
-import env from "./config/env.js";
-import { SwaggerConfig } from "./config/swagger.js";
+import env from "./config/env";
+import { SwaggerConfig } from "./config/swagger";
 
 
 export class App {
@@ -16,6 +16,7 @@ export class App {
         this.initializeMiddleware();
         this.initializeCors();
         this.initializeSwagger();
+        this.initializeRoutes();
     }
 
     private initializeMiddleware(): void {
@@ -51,5 +52,15 @@ export class App {
 
     private initializeSwagger(): void {
         new SwaggerConfig(this.app).setup();
+    }
+
+    private initializeRoutes(): void {
+
+    }
+
+    public listen(): void {
+        this.app.listen(this.port, ()=> {
+            console.log(`Server running on port ${this.port}`);
+        })
     }
 }
