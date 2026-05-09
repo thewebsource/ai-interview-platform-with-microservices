@@ -5,7 +5,7 @@ import { redisClient } from "@repo/redis";
 
 const startServer = async () => {
     try {
-
+        
         await redisClient.ping();
         const app = new App(env.PORT);
         app.listen();

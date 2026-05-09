@@ -3,12 +3,14 @@ import cookieParser from "cookie-parser";
 import cors, { CorsOptions } from "cors";
 import env from "./config/env";
 import { SwaggerConfig } from "./config/swagger";
+import { Database } from "@repo/postgres";
 
 
 export class App {
     private static instance: App;
     private app: Application;
     private port: number;
+    private db: Database = Database.getInstance();
 
     constructor(port: number){
         this.app = express();
@@ -17,6 +19,11 @@ export class App {
         this.initializeCors();
         this.initializeSwagger();
         this.initializeRoutes();
+        this.initializePostgresDBConnection();
+    }
+
+    private initializePostgresDBConnection() {
+        this.db.connectToDB();
     }
 
     private initializeMiddleware(): void {

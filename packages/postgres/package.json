@@ -1,0 +1,13 @@
+{
+  "name": "@repo/postgres",
+  "type": "commonjs",
+  "version": "1.0.0",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "pg": "^8.20.0",
+    "reflect-metadata": "^0.2.2",
+    "typeorm": "^0.3.29"
+  }
+}
