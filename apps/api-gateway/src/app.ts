@@ -4,6 +4,7 @@ import cors, { CorsOptions } from "cors";
 import env from "./config/env";
 import { SwaggerConfig } from "./config/swagger";
 import { Database } from "@repo/postgres";
+import { globalErrorHandler } from "@repo/errors";
 
 
 export class App {
@@ -19,6 +20,7 @@ export class App {
         this.initializeCors();
         this.initializeSwagger();
         this.initializeRoutes();
+        this.initializeGlobalErrorHandler();
         this.initializePostgresDBConnection();
     }
 
@@ -63,6 +65,10 @@ export class App {
 
     private initializeRoutes(): void {
 
+    }
+
+    private initializeGlobalErrorHandler(): void {
+        this.app.use(globalErrorHandler);
     }
 
     public listen(): void {

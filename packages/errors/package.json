@@ -3,5 +3,12 @@
   "type": "commonjs",
   "version": "1.0.0",
   "main": "src/index.ts",
-  "types": "src/index.ts"
+  "types": "src/index.ts",
+  "dependencies": {
+    "@repo/constants": "workspace:*",
+    "@repo/utils": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6"
+  }
 }

@@ -17,7 +17,9 @@
     "declaration": true,
     "declarationMap": true,
     "sourceMap": true,
-    "composite": true
+    "composite": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true
   },
   "include": ["packages/**/*", "apps/**/*"],
   "exclude": ["node_modules", "**/dist/*"]

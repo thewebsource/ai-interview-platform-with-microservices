@@ -1,6 +1,7 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
+    "rootDir": "src",
     "outDir": "./dist",
     "baseUrl": "../../",
     "module": "NodeNext",
@@ -14,7 +15,8 @@
   "references": [
     { "path": "../../packages/constants" },
     { "path": "../../packages/redis" },
-    { "path": "../../packages/postgres" }
+    { "path": "../../packages/postgres" },
+    { "path": "../../packages/errors" },
   ]
 }
 

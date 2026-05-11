@@ -1,6 +1,7 @@
 import { DataSource } from "typeorm";
 import dotenv from "dotenv";
 import path from "path";
+import { UserEntity } from "../entities/userEntity";
 
 dotenv.config({
   path: path.resolve(__dirname, "../../.env"),
@@ -15,7 +16,9 @@ export const AppDataSource = new DataSource({
   database: process.env.DB_NAME,
   synchronize: false,
   logging: true,
-  entities: [],
+  entities: [
+    UserEntity
+  ],
   extra: {
     min: Number(process.env.DB_MIN_POOL_CONNECTIONS) || 2,
     max: Number(process.env.DB_MAX_POOL_CONNECTIONS) || 10,

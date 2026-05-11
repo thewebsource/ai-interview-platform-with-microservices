@@ -6,5 +6,8 @@
   "types": "src/index.ts",
   "dependencies": {
     "@repo/constants": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6"
   }
 }
