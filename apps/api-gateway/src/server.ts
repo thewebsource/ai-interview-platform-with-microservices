@@ -1,4 +1,3 @@
-import "reflect-metadata";
 import { App } from "./app";
 import env from "./config/env";
 import { redisClient } from "@repo/redis";
